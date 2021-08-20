@@ -11,6 +11,14 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <bixin-playmate-statistics-sdk.version>1.0.0-SNAPSHOT</bixin-playmate-statistics-sdk.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.yupaopao.bixin</groupId>
+            <artifactId>bixin-playmate-statistics-sdk</artifactId>
+            <version>${bixin-playmate-statistics-sdk.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
