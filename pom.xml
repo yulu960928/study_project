@@ -12,12 +12,24 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <bixin-playmate-statistics-sdk.version>1.0.0-SNAPSHOT</bixin-playmate-statistics-sdk.version>
+        <bixin-playmate-statistics-api.version>1.0.0-SNAPSHOT</bixin-playmate-statistics-api.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>com.yupaopao.bixin</groupId>
             <artifactId>bixin-playmate-statistics-sdk</artifactId>
             <version>${bixin-playmate-statistics-sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.61</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.yupaopao.bixin</groupId>
+            <artifactId>bixin-playmate-statistics-api</artifactId>
+            <version>${bixin-playmate-statistics-api.version}</version>
         </dependency>
     </dependencies>
 
