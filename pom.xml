@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stat.demo</groupId>
-    <artifactId>stat-demo</artifactId>
+    <artifactId>demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
@@ -30,6 +30,11 @@
             <groupId>com.yupaopao.bixin</groupId>
             <artifactId>bixin-playmate-statistics-api</artifactId>
             <version>${bixin-playmate-statistics-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
         </dependency>
     </dependencies>
 
