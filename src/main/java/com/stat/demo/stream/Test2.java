@@ -2,9 +2,12 @@ package com.stat.demo.stream;
 
 import com.google.common.collect.Lists;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 /**
@@ -33,11 +36,56 @@ public class Test2 {
                 return dis < 0 ? -1 : (dis == 0 ? 0 : 1);
             }
         });
-        personList.stream().max(Comparator.comparingInt()))
-        System.out.println(max.get().getSalary());
 
+        Optional<Person> person = personList.stream().max(Comparator.comparingInt(Person::getSalary));
+        Optional<Person> person1 = personList.stream().max(new PersonComparator());
+
+        Person maxP = personList.get(0);
+        for (Person p : personList) {
+            if (Integer.compare(p.getSalary(), maxP.getSalary())>0) {
+                maxP = p;
+            }
+        }
+
+        System.out.println(person.get().getSalary());
+
+//        String = "";
+        comparingX(1);
     }
 
+    // 泛型类
+    class BaseComparator<T> {
+        private T data;
+
+        public void say(T data){
+            System.out.println(data);
+        }
+
+        public T comparingInt(T data) {
+            System.out.println(data);
+            return data;
+        }
+    }
+
+    //泛型方法
+    public static  <T> T comparingX(T data) {
+        System.out.println(data);
+        return data;
+    }
+
+
+    static class PersonComparator implements Comparator<Person> {
+        @Override
+        public int compare(Person o1, Person o2) {
+            return Integer.compare(o1.getSalary(), o2.getSalary());
+        }
+    }
+
+    public static <T> Comparator<T> comparingInt(ToIntFunction<? super T> keyExtractor) {
+        Objects.requireNonNull(keyExtractor);
+        return (Comparator<T> & Serializable)
+                (c1, c2) -> Integer.compare(keyExtractor.applyAsInt(c1), keyExtractor.applyAsInt(c2));
+    }
 
 }
 
