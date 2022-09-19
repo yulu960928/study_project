@@ -1,3 +1,0 @@
-<logger name="org.apache.zookeeper.ClientCnxn">
-    <level value="info"></level>
-</logger>

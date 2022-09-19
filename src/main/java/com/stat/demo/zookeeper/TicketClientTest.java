@@ -9,6 +9,9 @@ import org.apache.curator.retry.RetryOneTime;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @author yulu
+ */
 public class TicketClientTest {
 
     private int tickets = 100;
@@ -19,7 +22,8 @@ public class TicketClientTest {
         TicketClientTest client = new TicketClientTest();
         ExecutorService executorService = createExecutor();
         for (int i = 0; i < 10; i++) {
-            executorService.execute(()-> System.out.println(Thread.currentThread().getName()+":1111"));
+//            executorService.execute(()-> System.out.println(Thread.currentThread().getName()+":1111"));
+            executorService.execute(client::run);
         }
     }
 
