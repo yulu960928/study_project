@@ -15,7 +15,8 @@ import java.util.Date;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.stat.demo.*")
-//@EnableApolloConfig
+@EnableApolloConfig
+//@EnableKafka
 public class ApplicationMain {
 
     public static void main(String[] args) {
